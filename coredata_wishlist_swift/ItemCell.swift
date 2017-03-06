@@ -20,6 +20,7 @@ class ItemCell: UITableViewCell {
         title.text = item.title //attibite for entity
         price.text = "฿\(item.price)"
         details.text = item.details
+        thumb.image = item.toImage?.image as? UIImage
     }
     
 

@@ -41,6 +41,28 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         cell.configureCell(item: item)
     }
     
+    //MARK: After at Load information to textfield at ItemDetialsVC
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //get the object ready to be sent from here to next view
+        if let objs = controller.fetchedObjects , objs.count > 0 { //where objs.count //เมื่อเรากดไปที่ ไอเท็ม1อันใน tableview , func จะเรียกและเช็คเพื่อ make sure ว่ามี object อยุ่ใน fetched result จริงๆ  และมีค่ามากกว่า 1
+            
+            let item = objs[indexPath.row]
+            performSegue(withIdentifier: "ItemDetailsVC", sender: item)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ItemDetailsVC" {
+            if let destination = segue.destination as? ItemDetailsVC {
+                if let item = sender as? Item {
+                    destination.itemToEdit = item
+                }
+            }
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let sections = controller.sections {
@@ -106,7 +128,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             break
         case.delete:
             if let indexPath = indexPath {
-                tableView.insertRows(at: [indexPath], with: .fade)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
             break
         case.update:
