@@ -37,34 +37,36 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-//        let store = Store(context: context)
-//        store.name = "Paragon"
-//        let store2 = Store(context: context)
-//        store2.name = "Central"
-//        let store3 = Store(context: context)
-//        store3.name = "Tops"
-//        let store4 = Store(context: context)
-//        store4.name = "Gourmet Market"
-//        let store5 = Store(context: context)
-//        store5.name = "The Mall"
-//        let store6 = Store(context: context)
-//        store6.name = "Robinson"
-//        let store7 = Store(context: context)
-//        store7.name = "Big C"
-//        let store8 = Store(context: context)
-//        store8.name = "Tesco Lotus"
-//        let store9 = Store(context: context)
-//        store9.name = "Makro"
-//        let store10 = Store(context: context)
-//        store10.name = "Home Pro"
-//        let store11 = Store(context: context)
-//        store11.name = "Ikea"
-//        let store12 = Store(context: context)
-//        store12.name = "7-11"
-//        let store13 = Store(context: context)
-//        store13.name = "Other"
-//        
-//        ad.saveContext()
+            let store = Store(context: context)
+        print(Store.description())
+            store.name = "Paragon"
+            let store2 = Store(context: context)
+            store2.name = "Central"
+            let store3 = Store(context: context)
+            store3.name = "Tops"
+            let store4 = Store(context: context)
+            store4.name = "Gourmet Market"
+            let store5 = Store(context: context)
+            store5.name = "The Mall"
+            let store6 = Store(context: context)
+            store6.name = "Robinson"
+            let store7 = Store(context: context)
+            store7.name = "Big C"
+            let store8 = Store(context: context)
+            store8.name = "Tesco Lotus"
+            let store9 = Store(context: context)
+            store9.name = "Makro"
+            let store10 = Store(context: context)
+            store10.name = "Home Pro"
+            let store11 = Store(context: context)
+            store11.name = "Ikea"
+            let store12 = Store(context: context)
+            store12.name = "7-11"
+            let store13 = Store(context: context)
+            store13.name = "Other"
+                    
+            ad.saveContext()
+
         getStores()
         
         if itemToEdit != nil {

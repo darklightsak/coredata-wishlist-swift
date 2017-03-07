@@ -33,6 +33,9 @@
                                     <segment title="Title"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.72156862749999995" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="pPf-C6-j15"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ed-al-rjv">
                                 <rect key="frame" x="15" y="119" width="345" height="548"/>
@@ -137,14 +140,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="seqment" destination="paJ-H4-LKv" id="OsF-D0-0DL"/>
+                        <outlet property="segment" destination="paJ-H4-LKv" id="Ib4-0b-jJ5"/>
                         <outlet property="tableView" destination="7ed-al-rjv" id="EiP-0W-pFQ"/>
                         <segue destination="Fn1-rl-PaV" kind="show" identifier="ItemDetailsVC" id="Ph2-gA-X8f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="-545.57721139430294"/>
+            <point key="canvasLocation" x="866" y="-544"/>
         </scene>
         <!--Add/Edit-->
         <scene sceneID="2GE-ql-Phx">
