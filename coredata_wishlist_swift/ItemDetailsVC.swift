@@ -22,6 +22,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     var stores = [Store]()
     var itemToEdit: Item?
     var imagePicker: UIImagePickerController!
+    var countRowPicker :Int = 0
     
     
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         imagePicker.delegate = self
         
             let store = Store(context: context)
-        print(Store.description())
+            print(countRowPicker)
             store.name = "Paragon"
             let store2 = Store(context: context)
             store2.name = "Central"
@@ -78,7 +79,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
+        countRowPicker = row
         let store = stores[row]
         return store.name
     }
