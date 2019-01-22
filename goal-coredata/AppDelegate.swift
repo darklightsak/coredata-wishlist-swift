@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  coredata_wishlist_swift
+//  goal-coredata
 //
-//  Created by Surasak Wattanapradit on 3/5/2560 BE.
-//  Copyright © 2560 Surasak Wattanapradit. All rights reserved.
+//  Created by Surasak Wattanapradit on 23/1/2562 BE.
+//  Copyright © 2562 Surasak Wattanapradit. All rights reserved.
 //
 
 import UIKit
@@ -11,11 +11,11 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "coredata_wishlist_swift")
+        let container = NSPersistentContainer(name: "goal_coredata")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -90,10 +90,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
-
-//App Delegate
-let ad = UIApplication.shared.delegate as! AppDelegate //ใช้เป็น Custom class ไฟล์อื่นได้
-let context = ad.persistentContainer.viewContext //ยืนยันที่จะใส่ ad ลงใน context
-
 
